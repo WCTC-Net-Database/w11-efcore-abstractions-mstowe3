@@ -1,4 +1,4 @@
-﻿using ConsoleRpgEntities.Models.Attributes;
+﻿﻿using ConsoleRpgEntities.Models.Attributes;
 
 namespace ConsoleRpgEntities.Models.Characters.Monsters
 {
@@ -9,7 +9,15 @@ namespace ConsoleRpgEntities.Models.Characters.Monsters
         public override void Attack(ITargetable target)
         {
             // Goblin-specific attack logic
-            Console.WriteLine($"{Name} sneaks up and attacks {target.Name}!");
+            int damage = Sneakiness * AggressionLevel / 2;
+            Console.WriteLine($"{Name} sneaks up and attacks {target.Name} dealing {damage} damage!");
+            if (target is Player player)
+            {
+                int durability = player.Equipments.Armor.Durability;
+                damage = damage - durability;
+                Console.WriteLine($"Player has {player.Equipments.Armor.Name}, so player loses {damage} health points.");
+                player.Health -= damage;
+            }
         }
     }
 }

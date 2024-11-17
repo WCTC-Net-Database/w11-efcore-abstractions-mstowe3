@@ -1,5 +1,6 @@
 ﻿using ConsoleRpgEntities.Models.Attributes;
 using ConsoleRpgEntities.Models.Characters;
+using ConsoleRpgEntities.Models.Characters.Monsters;
 
 namespace ConsoleRpgEntities.Models.Abilities.PlayerAbilities
 {
@@ -12,6 +13,12 @@ namespace ConsoleRpgEntities.Models.Abilities.PlayerAbilities
         {
             // Fireball ability logic
             Console.WriteLine($"{user.Name} shoves {target.Name} back {Distance} feet, dealing {Damage} damage!");
+            
+            if (target is Goblin goblin)
+            {
+                goblin.Health -= Damage;
+                Console.WriteLine($"{goblin.Name} has {goblin.Health} left");
+            }
         }
     }
 }
