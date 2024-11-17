@@ -1,4 +1,4 @@
-﻿﻿using ConsoleRpg.Helpers;
+﻿using ConsoleRpg.Helpers;
 using ConsoleRpgEntities.Data;
 using ConsoleRpgEntities.Models.Attributes;
 using ConsoleRpgEntities.Models.Characters;
