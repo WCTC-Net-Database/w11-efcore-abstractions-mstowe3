@@ -8,4 +8,5 @@ namespace ConsoleRpgEntities.Models
         public int Attack {get;set;}
         public int Durability {get;set;}
     }
+    
 }

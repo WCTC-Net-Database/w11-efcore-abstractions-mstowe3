@@ -13,6 +13,7 @@ namespace ConsoleRpgEntities.Data
 
         public GameContext(DbContextOptions<GameContext> options) : base(options)
         {
+       
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -27,7 +28,7 @@ namespace ConsoleRpgEntities.Data
                 .HasDiscriminator<string>(pa=>pa.AbilityType)
                 .HasValue<ShoveAbility>("ShoveAbility");
 
-            // Configure many-to-many relationship
+            
             modelBuilder.Entity<Player>()
                 .HasMany(p => p.Abilities)
                 .WithMany(a => a.Players)

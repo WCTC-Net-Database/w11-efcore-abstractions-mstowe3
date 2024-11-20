@@ -10,4 +10,5 @@ namespace ConsoleRpgEntities.Models
         public virtual Item? Weapon {get;set;}
         public virtual Item? Armor {get;set;}
     }
+    
 }

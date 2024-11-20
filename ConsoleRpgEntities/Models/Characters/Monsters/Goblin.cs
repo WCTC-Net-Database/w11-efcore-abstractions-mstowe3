@@ -11,6 +11,7 @@ namespace ConsoleRpgEntities.Models.Characters.Monsters
             // Goblin-specific attack logic
             int damage = Sneakiness * AggressionLevel / 2;
             Console.WriteLine($"{Name} sneaks up and attacks {target.Name} dealing {damage} damage!");
+            
             if (target is Player player)
             {
                 int durability = player.Equipments.Armor.Durability;
